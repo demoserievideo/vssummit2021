@@ -20,3 +20,23 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+  deploy_dev:
+    name: Deploy Dev
+    runs-on: ubuntu-latest
+    environment:
+      name: dev 
+    needs: build    
+    steps:
+    - run: |
+        echo "Deploy Dev"
+
+  deploy_hmg:
+    name: Deploy HMG
+    runs-on: ubuntu-latest
+    environment:
+      name: hmg 
+    needs: deploy_dev    
+    steps:
+    - run: |
+        echo "Deploy HMG"
