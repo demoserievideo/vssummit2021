@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  call-workflow-passing-data:
     uses: demoserievideo/pipeline-templates/.github/workflows/dotnetbuild.yml@main
+    
 
 #    runs-on: ubuntu-latest
 
@@ -22,22 +23,22 @@ jobs:
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
 
-  deploy_dev:
-    name: Deploy Dev
-    runs-on: ubuntu-latest
-    environment:
-      name: dev 
-    needs: build    
-    steps:
-    - run: |
-        echo "Deploy Dev"
+  #deploy_dev:
+  #  name: Deploy Dev
+  #  runs-on: ubuntu-latest
+  #  environment:
+  #    name: dev 
+  #  needs: build    
+  #  steps:
+  #  - run: |
+  #      echo "Deploy Dev"
 
-  deploy_hmg:
-    name: Deploy HMG
-    runs-on: ubuntu-latest
-    environment:
-      name: hmg 
-    needs: deploy_dev    
-    steps:
-    - run: |
-        echo "Deploy HMG"
+  #deploy_hmg:
+  #  name: Deploy HMG
+  #  runs-on: ubuntu-latest
+  #  environment:
+  #    name: hmg 
+  #  needs: deploy_dev    
+  #  steps:
+  #  - run: |
+  #      echo "Deploy HMG"
