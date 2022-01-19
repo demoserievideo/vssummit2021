@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    uses: demoserievideo/pipeline-templates/.github/dotnet-build.yml@main
+    uses: demoserievideo/pipeline-templates/.github/workflows/dotnet-build.yml@main
 
 #    runs-on: ubuntu-latest
 
