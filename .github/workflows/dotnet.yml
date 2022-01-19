@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-workflow-passing-data:
+  build:
     uses: demoserievideo/pipeline-templates/.github/workflows/dotnetbuild.yml@main
     
 
